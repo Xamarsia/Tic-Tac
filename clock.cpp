@@ -12,6 +12,9 @@ private:
         TAC
     };
 
+    Clock(const Clock&) = delete;               // конструктор копирования 
+    Clock& operator=(const Clock&) = delete;    // оператор присваивания копирования 
+
     Status clockStatus = Status::TAC;
     std::mutex status;
     std::condition_variable cv;
